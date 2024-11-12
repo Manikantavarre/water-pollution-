@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Pollution Awareness - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // JavaScript form validation
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+
+            // Check if the email is in a valid format
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            alert("Your message has been sent successfully!");
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <h1>Water Pollution Awareness</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="causes.html">Causes</a>
+            <a href="effects.html">Effects</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Contact Content -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p>Email: info@waterpollution.org</p>
+        <p>Phone: +123-456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Water Pollution Awareness | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
